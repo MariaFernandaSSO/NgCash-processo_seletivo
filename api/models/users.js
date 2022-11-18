@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       Users.belongsTo(models.Accounts, {
         foreignKey: 'id'
       })
+
+      Users.hasOne(models.Accounts, {
+        foreignKey: 'id'
+      })
     }
   }
   Users.init({
@@ -20,9 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       validate: {
-        min: 8,
-        isUppercase: true,
-        isInt: true
+        min: 8
       }
     },
     accountId: DataTypes.INTEGER

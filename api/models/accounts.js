@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'accountId'
       })
 
+      Accounts.belongsTo(models.Users, {
+        foreignKey: 'id'
+      })
+
       Accounts.hasMany(models.Transactions, {
         foreignKey: 'debitedAccountId'
       })
