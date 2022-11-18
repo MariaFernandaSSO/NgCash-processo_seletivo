@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "NG_CASH",
-    "host": "localhost",
+    "username": "marfer3egb22",
+    "password": "MaFer@Minas22",
+    "database": "marfer3egb22",
+    "host": "marfer3egb22.postgresql.dbaas.com.br",
     "dialect": "postgres"
   },
   "test": {

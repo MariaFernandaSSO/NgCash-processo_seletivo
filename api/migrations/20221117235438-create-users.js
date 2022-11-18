@@ -20,7 +20,7 @@ module.exports = {
       },
       accountId: {
         type: Sequelize.INTEGER,
-        references: { model: 'Accounts', key: 'id'}
+        reference: { model: 'accounts', key: 'id'}
       },
       createdAt: {
         allowNull: false,

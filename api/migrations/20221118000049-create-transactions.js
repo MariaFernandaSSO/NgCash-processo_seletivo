@@ -11,11 +11,11 @@ module.exports = {
       },
       debitedAccountId: {
         type: Sequelize.INTEGER,
-        references : { model: 'Accounts', key: 'id'}
+        reference : { model: 'accounts', key: 'id'}
       },
       creditedAccountId: {
         type: Sequelize.INTEGER,
-        references : { model: 'Accounts', key: 'id'}
+        reference : { model: 'accounts', key: 'id'}
       },
       value: {
         type: Sequelize.DECIMAL
