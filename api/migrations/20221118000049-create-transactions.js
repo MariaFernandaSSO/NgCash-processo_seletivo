@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Transactions', {
+    await queryInterface.createTable('transactions', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,10 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       debitedAccountId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : { model: 'Accounts', key: 'id'}
       },
       creditedAccountId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : { model: 'Accounts', key: 'id'}
       },
       value: {
         type: Sequelize.DECIMAL
@@ -29,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Transactions');
+    await queryInterface.dropTable('transactions');
   }
 };
